@@ -4,11 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8f63bc1-3485-49a6-adc0-80c76dc4f8a3" name="Changes" comment="" />
+    <list default="true" id="e8f63bc1-3485-49a6-adc0-80c76dc4f8a3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Carrito/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Carrito/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Carrito/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../Carrito/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Productos/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Productos/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Productos/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../Productos/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ventas/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Ventas/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ventas/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../Ventas/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../api-gateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eureka-sv/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../eureka-sv/pom.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -17,9 +29,9 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2mTYFmLkQninScJHNtfo2Dh1tUs" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -29,6 +41,7 @@
   "keyToString": {
     "Application.ApiGatewayApplication.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/Dell/Documents/Curso Microservice Spring Cloud/api-gateway"
   }

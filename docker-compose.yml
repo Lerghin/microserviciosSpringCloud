@@ -1,0 +1,120 @@
+version: "3"
+
+services:
+  eureka-sv:
+    build: eureka-sv
+    mem_limit: 512m
+    ports:
+      - "8761:8761"
+    networks:
+      - productoscartventas-network
+    restart: always
+
+  productos:
+    build: Productos
+    mem_limit: 512m
+    ports:
+      - "8082:8082"
+    environment:
+      DB_URL: jdbc:mysql://productos-db:3306/productos_db?createDatabaseIfNotExist=true&serverTimezone=UTC
+      DB_USER_NAME: root
+      DB_PASSWORD: 1234
+    restart: always
+    depends_on:
+      productos-db:
+        condition: service_healthy
+    networks:
+      - productoscartventas-network
+
+  productos-db:
+    image: mysql:8.0.33
+    ports:
+      - "3308:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: productos_db
+    restart: always
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 10s
+      retries: 10
+    networks:
+      - productoscartventas-network
+
+  carrito:
+    build: Carrito
+    mem_limit: 512m
+    ports:
+      - "9097:9097"
+    environment:
+      DB_URL: jdbc:mysql://carrito-db:3306/carrito_db?createDatabaseIfNotExist=true&serverTimezone=UTC
+      DB_USER_NAME: root
+      DB_PASSWORD: 1234
+    restart: always
+    depends_on:
+      carrito-db:
+        condition: service_healthy
+    networks:
+      - productoscartventas-network
+
+  carrito-db:
+    image: mysql:8.0.33
+    ports:
+      - "3309:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: carrito_db
+    restart: always
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 10s
+      retries: 10
+    networks:
+      - productoscartventas-network
+
+  ventas:
+    build: ventas
+    mem_limit: 512m
+    ports:
+      - "9091:9091"
+    environment:
+      DB_URL: jdbc:mysql://ventas-db:3306/ventas_db?createDatabaseIfNotExist=true&serverTimezone=UTC
+      DB_USER_NAME: root
+      DB_PASSWORD: 1234
+    restart: always
+    depends_on:
+      ventas-db:
+        condition: service_healthy
+    networks:
+      - productoscartventas-network
+
+  ventas-db:
+    image: mysql:8.0.33
+    ports:
+      - "3310:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: ventas_db
+    restart: always
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 10s
+      retries: 10
+    networks:
+      - productoscartventas-network
+
+  api-gateway:
+    build: api-gateway
+    mem_limit: 512m
+    ports:
+      - "9098:9098"
+    networks:
+      - productoscartventas-network
+    restart: always
+
+networks:
+  productoscartventas-network:
+    driver: bridge
